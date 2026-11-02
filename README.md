@@ -1,3 +1,8 @@
+<div align="center">
+  <img src="./profile-banner.png" width="100%" alt="Mohamed Abdulraziq - Digital Design Engineer">
+</div>
+
+<br>
 # Mohamed Abdulraziq
 
 ### Digital Design Engineer | RTL Design | SystemVerilog | FPGA
