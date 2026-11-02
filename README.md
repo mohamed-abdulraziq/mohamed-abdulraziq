@@ -3,6 +3,7 @@
 </div>
 
 <br>
+
 ### Digital Design Engineer | RTL Design | SystemVerilog | FPGA
 
 I'm an Electronics and Communications Engineering graduate focused on **Digital IC Design, RTL Development, and Computer Architecture**.
