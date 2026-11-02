@@ -70,7 +70,7 @@ My portfolio includes standalone RTL designs, integrated digital systems, and te
 
 ### Graduation & Team Project
 
-#### Transformer FPGA Accelerator — Sponsored by STMicroelectronics Egypt
+#### Transformer FPGA Accelerator - Sponsored by STMicroelectronics Egypt
 
 A team graduation project focused on the architecture and RTL implementation of an FPGA-based accelerator for Transformer workloads.
 
@@ -100,7 +100,7 @@ A team graduation project focused on the architecture and RTL implementation of 
 
 ## Community & Leadership
 
-**Director — IEEE Helwan Student Branch, Communications Society (ComSoc)**
+**Director - IEEE Helwan Student Branch, Communications Society (ComSoc)**
 
 - Helped introduce Digital IC Design and Analog IC Design learning tracks.
 - Contributed to organizing technical training, competitions, and student activities.
