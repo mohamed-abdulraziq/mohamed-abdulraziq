@@ -94,7 +94,7 @@ A team graduation project focused on the architecture and RTL implementation of 
 | **Digital Systems** | UART, asynchronous FIFO, CDC, synchronizers, ALU, register files |
 | **Verification** | QuestaSim, ModelSim, self-checking testbenches, reference models, directed and randomized testing |
 | **FPGA** | AMD/Xilinx Vivado, synthesis, implementation, timing analysis |
-| **ASIC Flow** | Synopsys Design Compiler, Formality, scan DFT, Cadence Encounter |
+| **ASIC Flow** | Synopsys Design Compiler, Formality |
 
 ---
 
