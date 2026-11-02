@@ -17,70 +17,96 @@ I work across RTL design, microarchitecture, functional verification, and FPGA/A
 
 ## Project Portfolio
 
-My portfolio includes standalone RTL designs, integrated digital systems, and team-based accelerator work. The projects below are grouped by where their source code and supporting material are available.
-
 ### Published GitHub Projects
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3><a href="https://github.com/mohamed-abdulraziq/Multi-Clock-Digital-System">Multi-Clock Digital System</a></h3>
-      <p>An integrated multi-clock digital system combining UART communication, an asynchronous FIFO, system controller, register file, ALU, and clock/reset management.</p>
-      <ul>
-        <li>Two clock domains with CDC structures and reset synchronization.</li>
-        <li>UART RX/TX, FIFO buffering, ALU operations, and register-file control.</li>
-        <li>Includes synthesis, scan DFT, Formality, and post-route implementation reports.</li>
-      </ul>
-      <p><b>Focus:</b> RTL integration · CDC · UART · FIFO · ASIC flow</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3><a href="https://github.com/mohamed-abdulraziq/Parameterized-Systolic-Matrix-Multiplier">Parameterized Systolic Matrix Multiplier</a></h3>
-      <p>A configurable output-stationary N × N systolic array for signed matrix multiplication, built from processing elements and an operand/control skew network.</p>
-      <ul>
-        <li>Parameterized PE array, reduction length, and accumulator width.</li>
-        <li>Wavefront alignment, valid/first/last control propagation, and stall support.</li>
-        <li>Self-checking regression across four parameter configurations.</li>
-      </ul>
-      <p><b>Focus:</b> Computer architecture · MAC datapaths · Pipelining · SystemVerilog</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3><a href="https://github.com/mohamed-abdulraziq/Parameterized-APB-Interconnect">Parameterized APB Interconnect</a></h3>
-      <p>A single-master, parameterized multi-slave APB interconnect with a centralized bridge and configurable RAM endpoints.</p>
-      <ul>
-        <li>Three-state APB controller: IDLE, SETUP, and ACCESS.</li>
-        <li>Byte-write strobes, per-slave protection, and address-range error handling.</li>
-        <li>Self-checking testbench evidence: 186 checks passed, 0 failed.</li>
-      </ul>
-      <p><b>Focus:</b> AMBA APB · Bus interconnects · Parameterized RTL · Verification</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>More RTL Design Work</h3>
-      <p>Additional processor and digital-design work complements the published repositories, including a MIPS single-cycle processor project and reusable hardware blocks.</p>
-      <ul>
-        <li>UART transmitter/receiver and asynchronous FIFO.</li>
-        <li>Clock divider, clock/reset control, and synchronizer structures.</li>
-        <li>ALU and register-file blocks integrated in the multi-clock system.</li>
-      </ul>
-      <p><b>Note:</b> These modules are represented within the linked integrated-system repository where applicable; not every item has a separate public repository.</p>
-    </td>
-  </tr>
-</table>
+#### 1. [Multi-Clock Digital System](https://github.com/mohamed-abdulraziq/Multi-Clock-Digital-System)
+
+A modular digital system integrating UART communication, an asynchronous FIFO, a system controller, a register file, an ALU, and clock/reset management. The architecture operates across separate reference-clock and UART-clock domains.
+
+**Architecture and RTL work**
+- Integrated a system controller that decodes UART-received commands and sequences register-file and ALU operations.
+- Implemented UART RX/TX datapaths, including serial sampling/transmission, parity checking, and framing checks.
+- Connected an asynchronous FIFO to transfer information between independently clocked domains.
+- Integrated a configurable register file and an ALU supporting arithmetic, logic, comparison, and shift operations.
+- Included clock dividers/gating, reset synchronizers, data synchronization, and FIFO pointer synchronization.
+
+**Implementation evidence**
+- Repository includes synthesis, scan DFT, Formality, and physical-design report summaries.
+- The published reports document mapped area and timing, equivalence comparison results, scan statistics, and post-route timing/physical checks.
+- Each reported metric is accompanied by its scope and limitations in the project documentation.
+
+**Technologies:** Verilog/SystemVerilog · UART · Asynchronous FIFO · CDC · ALU · Register File · Design Compiler · Formality · Cadence Encounter
+
+---
+
+#### 2. [Parameterized Output-Stationary Systolic Matrix Multiplier](https://github.com/mohamed-abdulraziq/Parameterized-Systolic-Matrix-Multiplier)
+
+A parameterized N × N SystemVerilog accelerator for signed matrix multiplication, using an output-stationary dataflow. Each Processing Element (PE) owns one output matrix element and accumulates its partial sum locally while operands propagate through the array.
+
+**Architecture and RTL work**
+- Designed a configurable PE array with signed multiply-accumulate datapaths.
+- Implemented horizontal propagation of A operands and vertical propagation of B operands.
+- Developed an operand/control skew network to align matching operands at each PE.
+- Propagated valid, first, and last markers alongside the data.
+- Added global-enable stall handling across the PE pipeline, skew network, and output collector.
+- Implemented ordered row collection, per-row completion tracking, and a matrix-done pulse.
+
+**Verification and implementation evidence**
+- Self-checking back-to-back regression across four parameter configurations, plus reset/recovery stress testing.
+- The supplied regression reports 380 completed matrices across the four configurations, with no output errors.
+- Includes a Synopsys Design Compiler synthesis setup and reports for the default 5×5 configuration.
+- The 7×7 configuration is functionally simulated; the repository explicitly separates architectural throughput estimates from measured implementation performance.
+
+**Technologies:** SystemVerilog · Systolic Arrays · Processing Elements · MAC Datapaths · Pipelining · QuestaSim/ModelSim · Synopsys Design Compiler
+
+---
+
+#### 3. [Parameterized Multi-Slave APB Interconnect](https://github.com/mohamed-abdulraziq/Parameterized-APB-Interconnect)
+
+A single-master, parameterized APB interconnect that connects a request interface to a configurable bank of memory-mapped APB RAM slaves through a centralized bridge.
+
+**Architecture and RTL work**
+- Implemented an APB bridge controlled by an IDLE / SETUP / ACCESS finite-state machine.
+- Parameterized the data width, address width, slave count, and byte-strobe width.
+- Used a generate-based structure to instantiate multiple RAM slave endpoints.
+- Provided per-slave selection encoding, protection configuration, and memory depth.
+- Supported byte-level writes through PSTRB.
+- Implemented protection-mismatch and out-of-range address error responses.
+- Aggregated the selected slave's PREADY, PRDATA, and PSLVERR responses and supported back-to-back requests.
+
+**Verification and implementation evidence**
+- Self-checking testbench covering normal reads/writes, partial-byte writes, address boundaries, invalid addresses, protection mismatches, back-to-back transfers, and randomized transactions.
+- Supplied simulation result: **186 checks passed, 0 failed**.
+- Supplied Vivado implementation timing summary reports positive setup, hold, and pulse-width slack against the 100 MHz target.
+- The repository documents the timing evidence and clearly identifies unavailable utilization/source-flow artifacts.
+
+**Technologies:** SystemVerilog · AMBA APB · Parameterized RTL · FSM Design · Memory Interfaces · Self-Checking Testbench · Vivado
+
+---
+
+### Additional Processor Design Project
+
+#### MIPS Single-Cycle Processor
+
+A separate RTL processor-design project focused on a single-cycle MIPS architecture. It is part of my digital-design portfolio, but **a dedicated public GitHub repository has not been published yet**. Its project link will be added here when the source and documentation are released.
+
+---
 
 ### Graduation & Team Project
 
-#### Transformer FPGA Accelerator - Sponsored by STMicroelectronics Egypt
+#### Transformer FPGA Accelerator — Sponsored by STMicroelectronics Egypt
 
-A team graduation project focused on the architecture and RTL implementation of an FPGA-based accelerator for Transformer workloads.
+A team graduation project focused on designing and implementing a configurable FPGA-based accelerator for Transformer workloads.
 
-- Participated in defining the accelerator architecture and algorithms.
+**Architecture and implementation work**
+- Contributed to defining the accelerator architecture and algorithms.
 - Implemented and integrated the matrix multiplication unit.
 - Integrated the accelerator as a custom AXI4-Lite IP.
 - Worked on functional verification using QuestaSim, reference models, and constrained testbenches.
 - Worked through FPGA implementation and bitstream-based hardware validation.
+- The project architecture also includes the planned normalization and activation-function stages for Transformer operations.
 
-*The graduation project is separate from the standalone repositories listed above.*
+**Technologies:** SystemVerilog · FPGA · Transformer Workloads · Matrix Multiplication · AXI4-Lite · QuestaSim · Vivado
 
 ---
 
@@ -94,13 +120,13 @@ A team graduation project focused on the architecture and RTL implementation of 
 | **Digital Systems** | UART, asynchronous FIFO, CDC, synchronizers, ALU, register files |
 | **Verification** | QuestaSim, ModelSim, self-checking testbenches, reference models, directed and randomized testing |
 | **FPGA** | AMD/Xilinx Vivado, synthesis, implementation, timing analysis |
-| **ASIC Flow** | Synopsys Design Compiler, Formality |
+| **ASIC Flow** | Synopsys Design Compiler, Formality, scan DFT, Cadence Encounter |
 
 ---
 
 ## Community & Leadership
 
-**Director - IEEE Helwan Student Branch, Communications Society (ComSoc)**
+**Director — IEEE Helwan Student Branch, Communications Society (ComSoc)**
 
 - Helped introduce Digital IC Design and Analog IC Design learning tracks.
 - Contributed to organizing technical training, competitions, and student activities.
