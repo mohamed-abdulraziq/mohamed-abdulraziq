@@ -1,16 +1,49 @@
-## Hi there 👋
+# Mohamed Abdulraziq
 
-<!--
-**mohamed-abdulraziq/mohamed-abdulraziq** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### Digital Design Engineer | RTL Design | SystemVerilog | FPGA
 
-Here are some ideas to get you started:
+I'm an Electronics and Communications Engineering graduate focused on **Digital IC Design, RTL Development, and Computer Architecture**.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+I enjoy designing and implementing digital hardware architectures, developing parameterized RTL modules, and verifying their functionality through simulation and FPGA implementation flows.
+
+My current interests include:
+
+- RTL Design using Verilog and SystemVerilog
+- Digital Design Microarchitecture
+- FPGA Design and Implementation
+- Computer Architecture and Hardware Accelerators
+- Functional Verification and Design Validation
+
+### Technical Skills
+
+| Category | Technologies |
+|---|---|
+| **HDL** | Verilog, SystemVerilog |
+| **Design** | RTL Design, FSMs, Pipelining, Parameterized Design |
+| **Interfaces** | AXI4-Lite, AXI4-Stream, APB |
+| **Verification** | QuestaSim, ModelSim, Icarus Verilog |
+| **FPGA & EDA** | Xilinx Vivado |
+| **Architecture** | Systolic Arrays, Matrix Multiplication, Memory Controllers |
+
+### Featured Work
+
+**Transformer FPGA Accelerator**
+- Graduation project sponsored by STMicroelectronics Egypt.
+- Contributed to the architecture and RTL implementation of a configurable FPGA-based accelerator for Transformer workloads.
+- Implemented and integrated the matrix multiplication unit.
+- Integrated the accelerator as a custom AXI4-Lite IP.
+- Performed functional verification using QuestaSim and reference models.
+
+**Systolic Matrix Multiplier**
+- Developing a parameterized systolic matrix multiplication architecture.
+- Designing and verifying Processing Elements (PEs).
+- Focusing on signed arithmetic, accumulation, pipelining, and data forwarding.
+
+### Connect With Me
+
+- **LinkedIn:** [Mohamed Abdulraziq](https://linkedin.com/in/mohamed-abdulrazeq-638871274)
+- **GitHub:** [@mohamed-abdulraziq](https://github.com/mohamed-abdulraziq)
+
+---
+
+*Building digital hardware, one design at a time.*
