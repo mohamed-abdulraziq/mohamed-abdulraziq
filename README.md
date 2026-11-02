@@ -23,8 +23,8 @@ My current interests include:
 |---|---|
 | **HDL** | Verilog, SystemVerilog |
 | **Design** | RTL Design, FSMs, Pipelining, Parameterized Design |
-| **Interfaces** | AXI4-Lite, AXI4-Stream, APB |
-| **Verification** | QuestaSim, ModelSim, Icarus Verilog |
+| **Interfaces** | AXI4-Lite, APB |
+| **Verification** | QuestaSim, ModelSim |
 | **FPGA & EDA** | Xilinx Vivado |
 | **Architecture** | Systolic Arrays, Matrix Multiplication, Memory Controllers |
 
