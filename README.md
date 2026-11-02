@@ -88,13 +88,13 @@ A single-master, parameterized APB interconnect that connects a request interfac
 
 #### MIPS Single-Cycle Processor
 
-A separate RTL processor-design project focused on a single-cycle MIPS architecture. It is part of my digital-design portfolio, but **a dedicated public GitHub repository has not been published yet**. Its project link will be added here when the source and documentation are released.
+A separate RTL processor design project focused on a single-cycle MIPS architecture. It is part of my digital-design portfolio, but **a dedicated public GitHub repository has not been published yet**. Its project link will be added here when the source and documentation are released.
 
 ---
 
 ### Graduation & Team Project
 
-#### Transformer FPGA Accelerator — Sponsored by STMicroelectronics Egypt
+#### Transformer FPGA Accelerator - Sponsored by STMicroelectronics Egypt
 
 A team graduation project focused on designing and implementing a configurable FPGA-based accelerator for Transformer workloads.
 
@@ -120,13 +120,13 @@ A team graduation project focused on designing and implementing a configurable F
 | **Digital Systems** | UART, asynchronous FIFO, CDC, synchronizers, ALU, register files |
 | **Verification** | QuestaSim, ModelSim, self-checking testbenches, reference models, directed and randomized testing |
 | **FPGA** | AMD/Xilinx Vivado, synthesis, implementation, timing analysis |
-| **ASIC Flow** | Synopsys Design Compiler, Formality, scan DFT, Cadence Encounter |
+| **ASIC Flow** | Synopsys Design Compiler, Formality |
 
 ---
 
 ## Community & Leadership
 
-**Director — IEEE Helwan Student Branch, Communications Society (ComSoc)**
+**Director - IEEE Helwan Student Branch, Communications Society (ComSoc)**
 
 - Helped introduce Digital IC Design and Analog IC Design learning tracks.
 - Contributed to organizing technical training, competitions, and student activities.
