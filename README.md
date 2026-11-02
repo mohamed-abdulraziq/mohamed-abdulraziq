@@ -1,6 +1,5 @@
 <div align="center">
-  <img src="./Neon Blue Digital Design Engineer Banner.png
-" width="100%" alt="Mohamed Abdulraziq - Digital Design Engineer">
+  <img src="./Neon Blue Digital Design Engineer Banner.png" width="100%" alt="Mohamed Abdulraziq - Digital Design Engineer">
 </div>
 
 <br>
