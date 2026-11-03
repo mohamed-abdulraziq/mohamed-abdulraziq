@@ -104,19 +104,29 @@ A 32-bit MIPS-like single-cycle processor implemented in SystemVerilog, featurin
 
 ### Graduation & Team Project
 
-#### Transformer FPGA Accelerator - Sponsored by STMicroelectronics Egypt
+#### Configurable AI Accelerator for Transformer Inference on Edge Devices
+<sub>Sponsored by STMicroelectronics Egypt · Helwan University · 2025–2026</sub>
 
-A team graduation project focused on designing and implementing a configurable FPGA-based accelerator for Transformer workloads.
+A configurable FPGA accelerator for Transformer-oriented matrix multiplication. The architecture uses tile-based processing to scale to matrix dimensions up to **4096 × 4096**, while reusing one parallel datapath across multiple tile organizations.
 
-**Architecture and implementation work**
-- Contributed to defining the accelerator architecture and algorithms.
-- Implemented and integrated the matrix multiplication unit.
-- Integrated the accelerator as a custom AXI4-Lite IP.
-- Worked on functional verification using QuestaSim, reference models, and constrained testbenches.
-- Worked through FPGA implementation and bitstream-based hardware validation.
-- The project architecture also includes the planned normalization and activation-function stages for Transformer operations.
+**Architecture, algorithms, and hardware contributions**
+- Co-designed the overall accelerator architecture and developed the core tile-traversal algorithms and row-wise/column-wise dataflow organization.
+- Designed a configurable Matrix Multiplication Unit (MMU) around **64 parallel multipliers**, with **128 operations per cycle** under the project's MAC-counting convention.
+- Designed the customized decoder for four operating modes: **8×8, 4×16, 2×32, and 1×64**, allowing the same datapath to adapt to different tile shapes.
+- Developed the major control architecture and controllers for tile sequencing, operand movement, mode selection, and output handling.
+- Improved local data reuse using on-chip tile buffering, continuous data streaming, and triple-port output-memory access for read, write, and accumulation.
+- Designed a fully parallel fixed-point Sigmoid activation unit using Piecewise Linear Approximation (PWL), processing **eight 16-bit values in parallel**.
 
-**Technologies:** SystemVerilog · FPGA · Transformer Workloads · Matrix Multiplication · AXI4-Lite · QuestaSim · Vivado
+**FPGA implementation and validation**
+- Implemented the accelerator on the **AMD Xilinx Zynq UltraScale+ MPSoC ZCU104**.
+- Achieved a reported peak throughput of **12.90 GOPS at 100.80 MHz**, with positive setup slack of **0.079 ns** in the supplied implementation results.
+- Integrated the accelerator as a custom **AXI4-Lite IP**, verified functionality using a constrained QuestaSim testbench and reference model, and completed FPGA bitstream generation for the ZCU104 platform.
+
+**Research manuscript**
+
+The project also produced the manuscript *A Configurable FPGA-Based Accelerator for Tile-Based Matrix Multiplication in Transformer Workloads*, describing the tile-based architecture, configurable MMU, memory subsystem, and FPGA implementation.
+
+**Technologies:** SystemVerilog · FPGA Architecture · Transformer Workloads · Tile-Based Matrix Multiplication · AXI4-Lite · QuestaSim · Vivado · Zynq UltraScale+
 
 ---
 
