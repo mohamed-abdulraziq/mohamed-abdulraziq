@@ -84,11 +84,21 @@ A single-master, parameterized APB interconnect that connects a request interfac
 
 ---
 
-### Additional Processor Design Project
+### 4. [MIPS Single-Cycle Processor](https://github.com/mohamed-abdulraziq/MIPS-Single-Cycle-Processor)
 
-#### MIPS Single-Cycle Processor
+A 32-bit MIPS-like single-cycle processor implemented in SystemVerilog, featuring a custom 13-operation ALSU, a 32 × 32-bit register file, byte-organized instruction/data memories, and BEQ/J control flow.
 
-A separate RTL processor design project focused on a single-cycle MIPS architecture. It is part of my digital-design portfolio, but **a dedicated public GitHub repository has not been published yet**. Its project link will be added here when the source and documentation are released.
+**Architecture and RTL work**
+- Implemented the PC and next-address logic, instruction fetch, main/control decoding, register-file access, sign extension, ALSU execution, memory access, and write-back datapath.
+- Supported 13 R-type operations plus ADDI, LW, SW, BEQ, and J.
+- Added divide-by-zero detection and qualified register write-back, while suppressing writes to R0 and unsupported R-type functions.
+
+**Verification and ASIC synthesis evidence**
+- Self-checking QuestaSim testbench with a 41-instruction program, 36 checks, and supplied transcript evidence reporting 0 errors.
+- Synopsys Design Compiler synthesis using TSMC CL013G RVT libraries, with area, setup/hold timing, QoR, power-estimation, and design-check reports documented in the repository.
+- The published synthesis snapshot uses a 166.7 ns clock constraint and reports +0.04 ns setup slack. This is a pre-layout synthesis result, not post-route timing closure.
+
+**Technologies:** SystemVerilog · Computer Architecture · RTL Design · Control/Datapath · QuestaSim · Synopsys Design Compiler · TSMC 130 nm
 
 ---
 
